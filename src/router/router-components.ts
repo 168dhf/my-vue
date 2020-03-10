@@ -46,3 +46,4 @@ export default [
         component: () => import('../views/news/newsdetail.vue')
     },
 ]
+// test测试
