@@ -63,4 +63,10 @@ export default [
         meta: { title: '兑换内容' },
         component: () => import('../views/creditsexchange/conversion.vue')
     },
+    {
+        path: '/confirmchange',
+        name: 'confirmchange',
+        meta: { title: '兑换内容' },
+        component: () => import('../views/creditsexchange/confirmchange.vue')
+    },
 ]

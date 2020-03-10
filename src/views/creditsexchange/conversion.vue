@@ -42,7 +42,7 @@
           <img src="~@/assets/images/collection.png" alt />
           <div class="collection">已收藏</div>
         </div>
-        <div class="right">立即兑换</div>
+        <div class="right" @click="clickChange()">立即兑换</div>
       </div>
     </div>
   </div>
@@ -66,6 +66,12 @@ export default {
         }
       }
     };
+  },
+  methods:{
+      clickChange(){
+          console.log('你点击了我的兑换')
+          this.$router.push({name:'confirmchange'});
+      }
   }
 };
 </script>

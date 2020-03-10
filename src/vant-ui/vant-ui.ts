@@ -18,6 +18,7 @@ import {
   Lazyload,
   List,
   Sticky,
+  NumberKeyboard 
 } from 'vant';
 
 export default function() {
@@ -35,4 +36,5 @@ export default function() {
   Vue.use(Notify);
   Vue.use(List);
   Vue.use(Sticky);
+  Vue.use(NumberKeyboard)
 }
