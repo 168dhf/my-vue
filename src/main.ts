@@ -19,3 +19,4 @@ new Vue({
   store,
   render: h => h(App)
 }).$mount('#app')
+// 这也是测试
