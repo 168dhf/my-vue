@@ -60,9 +60,11 @@ export default {
 <style soped lang="less">
 .sett-content {
   // position: relative;
-  padding: 0 15px 0 15px;
+  // padding: 0 15px 0 15px;
   ul {
     margin-top: 35px;
+    padding-left: 15px;
+    padding-right: 15px;
     li {
       display: flex;
       justify-content: space-between;
@@ -94,7 +96,7 @@ export default {
   .footer {
     position: absolute;
     bottom: 20px;
-    width: 92%;
+    width: 100%;
   }
 }
 </style>

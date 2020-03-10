@@ -1,20 +1,18 @@
 <template>
-  <div class="news_content">
+  <div class="container">
     <!-- 头部 -->
-    <div class="header">
-      <Head :config="wrapConfig"></Head>
+    <Head :config="wrapConfig"></Head>
+    <div class="middle-container">
+        <div class="top"></div>
     </div>
-    <!-- 列表 -->
-    <newsList></newsList>
   </div>
 </template>
 
 <script>
 import Head from '@/components/buttom-compontens/head';
-import newsList from '@/views/components/newsList';
 export default {
-  name: 'news',
-  components: { Head, newsList },
+  name: 'creditsexchange',
+  components: { Head },
   props: ['config'],
   data() {
     return {
@@ -23,7 +21,7 @@ export default {
           backFn: () => {
             this.$router.go(-1);
           },
-          title: '消息'
+          title: '积分兑换'
         }
       }
     };
@@ -32,4 +30,8 @@ export default {
 </script>
 
 <style scoped lang="less">
+.container{
+    padding-left: 15px;
+    padding-right: 15px;
+}
 </style>

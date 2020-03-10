@@ -41,8 +41,6 @@ export default {
 
 <style scoped lang="less">
 .teacher-list {
-  padding-left: 15px;
-  padding-right: 15px;
   img {
     width: 20px;
     height: 20px;

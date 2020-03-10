@@ -26,6 +26,10 @@ export default {
 </script>
 
 <style scoped lang="less">
+.head-top{
+  padding-left: 15px;
+  padding-right: 15px;
+}
 .header {
   position: relative;
   z-index: 100;

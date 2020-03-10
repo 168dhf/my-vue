@@ -33,16 +33,16 @@ export default {
     };
   },
   created() {
-    console.log('我是this.$route',this.$route)
-  },
+    console.log('我是this.$route', this.$route);
+  }
 };
 </script>
 
 <style scoped lang="less">
 .detailcontent {
-  padding-left: 15px;
-  padding-right: 15px;
   .container {
+    padding-left: 15px;
+    padding-right: 15px;
     .title {
       font-size: 14px;
       font-weight: 500;

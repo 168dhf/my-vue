@@ -32,18 +32,18 @@
 </template>
 
 <script>
-import Buttom from "@/components/buttom-compontens/buttom";
+import Buttom from '@/components/buttom-compontens/buttom';
 export default {
-  name: "login",
+  name: 'login',
   components: { Buttom },
   props: [],
   data() {
     return {
       conf: {
-        title: "登录",
-        handelClick:()=>{
-          console.log('1111111111')
-          this.$router.push({name:'settauthentication'})
+        title: '登录',
+        handelClick: () => {
+          console.log('1111111111');
+          this.$router.push({ name: 'settauthentication' });
         }
       }
     };
@@ -54,9 +54,11 @@ export default {
 <style scoped lang="less">
 .login-content {
   margin-top: 50px;
-  padding: 0 30px 0 30px;
+  // padding: 0 30px 0 30px;
   .login-img {
     margin-bottom: 47px;
+    padding-left: 15px;
+    padding-right: 15px;
     img {
       // background: url('~@/assets/images/logo.png') no-repeat;
       width: 202px;
@@ -64,6 +66,8 @@ export default {
     }
   }
   .input_content {
+    padding-left: 15px;
+    padding-right: 15px;
     .firstinput {
       width: 315px;
       position: relative;
@@ -140,6 +144,8 @@ export default {
     display: flex;
     justify-content: space-between;
     margin-top: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
     .left {
       font-size: 15px;
       font-weight: 500;

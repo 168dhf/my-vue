@@ -12,7 +12,7 @@ export default {
 
 <style scoped lang="less">
 .sure {
-  width: 100%;
+  // width: 100%;
   height: 44px;
   background: linear-gradient(
     168deg,
@@ -27,5 +27,7 @@ export default {
   line-height: 44px;
   text-align: center;
   margin-top: 51px;
+  margin-left: 15px;
+  margin-right: 15px;
 }
 </style>

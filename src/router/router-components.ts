@@ -45,5 +45,22 @@ export default [
         meta: { title: '消息详情' },
         component: () => import('../views/news/newsdetail.vue')
     },
+    {
+        path: '/creditsexchange',
+        name: 'creditsexchange',
+        meta: { title: '消息详情' },
+        component: () => import('../views/creditsexchange/creditsexchange.vue')
+    },
+    {
+        path: '/forcomplete',
+        name: 'forcomplete',
+        meta: { title: '兑换完成' },
+        component: () => import('../views/creditsexchange/forcomplete.vue')
+    },
+    {
+        path: '/conversion',
+        name: 'conversion',
+        meta: { title: '兑换内容' },
+        component: () => import('../views/creditsexchange/conversion.vue')
+    },
 ]
-// test测试

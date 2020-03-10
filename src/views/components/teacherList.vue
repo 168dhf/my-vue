@@ -22,21 +22,77 @@
 export default {
   data() {
     return {
-        teacherList:[
-            {index:0, imgUrl: require('@/assets/images/topteacher.png'), title:'窦文涛', detail:'圈内大咖、代表作品《区块链的价值》；知名区块链解说员。',number:'3567万人关注', content:'28条内容'},
-            {index:1, imgUrl: require('@/assets/images/topteacher.png'), title:'窦文涛', detail:'圈内大咖、代表作品《区块链的价值》；知名区块链解说员。',number:'3567万人关注', content:'28条内容'},
-            {index:2, imgUrl: require('@/assets/images/topteacher.png'), title:'窦文涛', detail:'圈内大咖、代表作品《区块链的价值》；知名区块链解说员。',number:'3567万人关注', content:'28条内容'},
-            {index:3, imgUrl: require('@/assets/images/topteacher.png'), title:'窦文涛', detail:'圈内大咖、代表作品《区块链的价值》；知名区块链解说员。',number:'3567万人关注', content:'28条内容'},
-            {index:4, imgUrl: require('@/assets/images/topteacher.png'), title:'窦文涛', detail:'圈内大咖、代表作品《区块链的价值》；知名区块链解说员。',number:'3567万人关注', content:'28条内容'},
-            {index:5, imgUrl: require('@/assets/images/topteacher.png'), title:'窦文涛', detail:'圈内大咖、代表作品《区块链的价值》；知名区块链解说员。',number:'3567万人关注', content:'28条内容'},
-            {index:6, imgUrl: require('@/assets/images/topteacher.png'), title:'窦文涛', detail:'圈内大咖、代表作品《区块链的价值》；知名区块链解说员。',number:'3567万人关注', content:'28条内容'},
-            {index:7, imgUrl: require('@/assets/images/topteacher.png'), title:'窦文涛', detail:'圈内大咖、代表作品《区块链的价值》；知名区块链解说员。',number:'3567万人关注', content:'28条内容'},
-        ],
+      teacherList: [
+        {
+          index: 0,
+          imgUrl: require('@/assets/images/topteacher.png'),
+          title: '窦文涛',
+          detail: '圈内大咖、代表作品《区块链的价值》；知名区块链解说员。',
+          number: '3567万人关注',
+          content: '28条内容'
+        },
+        {
+          index: 1,
+          imgUrl: require('@/assets/images/topteacher.png'),
+          title: '窦文涛',
+          detail: '圈内大咖、代表作品《区块链的价值》；知名区块链解说员。',
+          number: '3567万人关注',
+          content: '28条内容'
+        },
+        {
+          index: 2,
+          imgUrl: require('@/assets/images/topteacher.png'),
+          title: '窦文涛',
+          detail: '圈内大咖、代表作品《区块链的价值》；知名区块链解说员。',
+          number: '3567万人关注',
+          content: '28条内容'
+        },
+        {
+          index: 3,
+          imgUrl: require('@/assets/images/topteacher.png'),
+          title: '窦文涛',
+          detail: '圈内大咖、代表作品《区块链的价值》；知名区块链解说员。',
+          number: '3567万人关注',
+          content: '28条内容'
+        },
+        {
+          index: 4,
+          imgUrl: require('@/assets/images/topteacher.png'),
+          title: '窦文涛',
+          detail: '圈内大咖、代表作品《区块链的价值》；知名区块链解说员。',
+          number: '3567万人关注',
+          content: '28条内容'
+        },
+        {
+          index: 5,
+          imgUrl: require('@/assets/images/topteacher.png'),
+          title: '窦文涛',
+          detail: '圈内大咖、代表作品《区块链的价值》；知名区块链解说员。',
+          number: '3567万人关注',
+          content: '28条内容'
+        },
+        {
+          index: 6,
+          imgUrl: require('@/assets/images/topteacher.png'),
+          title: '窦文涛',
+          detail: '圈内大咖、代表作品《区块链的价值》；知名区块链解说员。',
+          number: '3567万人关注',
+          content: '28条内容'
+        },
+        {
+          index: 7,
+          imgUrl: require('@/assets/images/topteacher.png'),
+          title: '窦文涛',
+          detail: '圈内大咖、代表作品《区块链的价值》；知名区块链解说员。',
+          number: '3567万人关注',
+          content: '28条内容'
+        }
+      ]
     };
   },
-  methods:{
-    changeList(index){
-      console.log('我是当前的index',index)
+  methods: {
+    changeList(index) {
+      console.log('我是当前的index', index);
     }
   }
 };
@@ -45,7 +101,9 @@ export default {
 <style scoped lang="less">
 div {
   ul {
-      margin-top: 15px;
+    margin-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
     li {
       display: flex;
       margin-bottom: 15px;
@@ -77,7 +135,7 @@ div {
           line-height: 17px;
           span:first-child::after {
             display: inline-block;
-            content: "";
+            content: '';
             width: 1px;
             height: 10px;
             background: #b3b3b3;

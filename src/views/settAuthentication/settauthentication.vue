@@ -56,7 +56,7 @@ export default {
 
 <style scpoed lang="less">
 .name-content {
-  padding: 0 20px 0 20px;
+  // padding: 0 20px 0 20px;
   .input_content {
     .firstinput {
       width: 100%;
@@ -89,23 +89,6 @@ export default {
         padding-bottom: 10px;
       }
     }
-  }
-  .sure {
-    width: 100%;
-    height: 44px;
-    background: linear-gradient(
-      168deg,
-      rgba(10, 114, 184, 1) 0%,
-      rgba(10, 114, 184, 1) 0%,
-      rgba(18, 49, 131, 1) 100%
-    );
-    border-radius: 22px;
-    font-size: 17px;
-    font-weight: 500;
-    color: rgba(255, 255, 255, 1);
-    line-height: 44px;
-    text-align: center;
-    margin-top: 51px;
   }
 }
 </style>
