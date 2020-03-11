@@ -36,11 +36,12 @@
 </template>
 
 <script>
+import { Dialog } from 'vant';
 import Buttom from '@/components/buttom-compontens/buttom';
 export default {
   name: 'login',
   components: { Buttom },
-  props: [],
+  props: ['config'],
   data() {
     return {
       account: '', //账号
@@ -51,13 +52,39 @@ export default {
         title: '登录',
         handelClick: () => {
           console.log('我是', this.account, this.password);
-          // let reg = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{8,30}$/;
           if (this.account == '' || this.password == '') {
-            alert('用户名和密码不能为空');
+            Dialog.confirm({
+              message: '用户名和密码不能为空',
+              closeOnClickOverlay: true
+            })
+              .then(() => {
+                // on confirm
+              })
+              .catch(() => {
+                // on cancel
+              });
           } else if (this.password.length <= 8) {
-            alert('密码长度不能小于或等于8位数字或字符');
+            Dialog.confirm({
+              message: '密码长度不能小于或等于8位数字或字符',
+              closeOnClickOverlay: true
+            })
+              .then(() => {
+                // on confirm
+              })
+              .catch(() => {
+                // on cancel
+              });
           } else if (!this.reg.test(this.password)) {
-            alert('请输入8位以上密码，密码中必须同时包含数字、字母');
+            Dialog.confirm({
+              message: '请输入8位以上密码，密码中必须同时包含数字、字母',
+              closeOnClickOverlay: true
+            })
+              .then(() => {
+                // on confirm
+              })
+              .catch(() => {
+                // on cancel
+              });
           } else {
             this.$router.push({ name: 'settauthentication' });
           }
@@ -78,7 +105,7 @@ export default {
     },
     //可看密码
     seePassword() {
-      this.pwdType ='password' ? 'text' : 'password';
+      this.pwdType = 'password' ? 'text' : 'password';
     },
     //不可看密码
     noseePassword() {
