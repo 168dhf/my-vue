@@ -69,7 +69,7 @@ export default {
   },
   methods:{
       clickChange(){
-          console.log('你点击了我的兑换')
+        //   console.log('你点击了我的兑换')
           this.$router.push({name:'confirmchange'});
       }
   }

@@ -57,8 +57,8 @@ export default {
   // padding: 0 30px 0 30px;
   .login-img {
     margin-bottom: 47px;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
     img {
       // background: url('~@/assets/images/logo.png') no-repeat;
       width: 202px;
@@ -66,8 +66,8 @@ export default {
     }
   }
   .input_content {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
     .firstinput {
       width: 315px;
       position: relative;
@@ -144,8 +144,8 @@ export default {
     display: flex;
     justify-content: space-between;
     margin-top: 30px;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
     .left {
       font-size: 15px;
       font-weight: 500;
@@ -162,6 +162,7 @@ export default {
     justify-content: space-between;
     position: absolute;
     bottom: 50px;
+    padding-left: 30px;
     .left {
       display: flex;
       span:nth-of-type(1) {
