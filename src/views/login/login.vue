@@ -5,13 +5,19 @@
     </div>
     <div class="input_content">
       <div class="firstinput">
-        <input v-model="account" @input="changeInput()" id="myInput" type="text" placeholder="请输入你的账号" />
+        <input
+          v-model="account"
+          @input="changeInput()"
+          id="myInput"
+          type="text"
+          placeholder="请输入你的账号"
+        />
         <img @click="clearn()" src="~@/assets/images/close.png" alt />
       </div>
       <div class="twoinput">
-        <input v-model="password" type="text" placeholder="请输入密码" />
-        <img src="~@/assets/images/shape.png" alt />
-        <img src="~@/assets/images/eyes.png" alt />
+        <input v-model="password" :type="pwdType" id="demoInput" placeholder="请输入密码" />
+        <img @click="noseePassword()" src="~@/assets/images/shape.png" alt />
+        <img @click="seePassword()" src="~@/assets/images/eyes.png" alt />
       </div>
     </div>
     <Buttom :config="conf"></Buttom>
@@ -37,42 +43,51 @@ export default {
   props: [],
   data() {
     return {
-      account:'',//账号
-      password:'',//密码
-      reg:/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{8,30}$/,
+      account: '', //账号
+      password: '', //密码
+      reg: /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{8,30}$/,
+      pwdType: 'password',
       conf: {
         title: '登录',
         handelClick: () => {
-          console.log('我是',this.account,this.password);
+          console.log('我是', this.account, this.password);
           // let reg = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{8,30}$/;
-          if(this.account == '' || this.password == ''){
-            alert('用户名和密码不能为空')
-          }else if(this.password.length <= 8){
-            alert('密码长度不能小于或等于8位数字或字符')
-          }else if(!this.reg.test(this.password)){
-            alert('请输入8位以上密码，密码中必须同时包含数字、字母')
-          }else{
+          if (this.account == '' || this.password == '') {
+            alert('用户名和密码不能为空');
+          } else if (this.password.length <= 8) {
+            alert('密码长度不能小于或等于8位数字或字符');
+          } else if (!this.reg.test(this.password)) {
+            alert('请输入8位以上密码，密码中必须同时包含数字、字母');
+          } else {
             this.$router.push({ name: 'settauthentication' });
           }
         }
       }
     };
   },
-  methods:{
+  methods: {
     //清楚input数据
-    clearn(){
+    clearn() {
       this.account = '';
     },
     //监听input输入值的变化并获取
-    changeInput(account){
-      console.log(this.account)
-      let value = document.getElementById("myInput").value;
-      console.log('我是value',value)
+    changeInput(account) {
+      console.log(this.account);
+      let value = document.getElementById('myInput').value;
+      console.log('我是value', value);
+    },
+    //可看密码
+    seePassword() {
+      this.pwdType ='password' ? 'text' : 'password';
+    },
+    //不可看密码
+    noseePassword() {
+      this.pwdType = !this.pwdType === 'password' ? 'text' : 'password';
     }
   },
-  computed:{},
-  created(){},
-  mounted(){}
+  computed: {},
+  created() {},
+  mounted() {}
 };
 </script>
 
