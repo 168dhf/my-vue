@@ -5,17 +5,15 @@
     </div>
     <div class="input_content">
       <div class="firstinput">
-        <input type="text" placeholder="请输入你的账号" />
-        <img src="~@/assets/images/close.png" alt />
+        <input v-model="account" @input="changeInput()" id="myInput" type="text" placeholder="请输入你的账号" />
+        <img @click="clearn()" src="~@/assets/images/close.png" alt />
       </div>
       <div class="twoinput">
-        <input type="text" placeholder="请输入密码" />
+        <input v-model="password" type="text" placeholder="请输入密码" />
         <img src="~@/assets/images/shape.png" alt />
         <img src="~@/assets/images/eyes.png" alt />
-        <!-- <img src="~@/assets/images/shape.png" alt=""> -->
       </div>
     </div>
-    <!-- <div class="login" @click="$router.push({name:'nameauthentication'})">登录</div> -->
     <Buttom :config="conf"></Buttom>
     <div class="forget">
       <div class="left">验证码登录</div>
@@ -39,15 +37,42 @@ export default {
   props: [],
   data() {
     return {
+      account:'',//账号
+      password:'',//密码
+      reg:/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{8,30}$/,
       conf: {
         title: '登录',
         handelClick: () => {
-          console.log('1111111111');
-          this.$router.push({ name: 'settauthentication' });
+          console.log('我是',this.account,this.password);
+          // let reg = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{8,30}$/;
+          if(this.account == '' || this.password == ''){
+            alert('用户名和密码不能为空')
+          }else if(this.password.length <= 8){
+            alert('密码长度不能小于或等于8位数字或字符')
+          }else if(!this.reg.test(this.password)){
+            alert('请输入8位以上密码，密码中必须同时包含数字、字母')
+          }else{
+            this.$router.push({ name: 'settauthentication' });
+          }
         }
       }
     };
-  }
+  },
+  methods:{
+    //清楚input数据
+    clearn(){
+      this.account = '';
+    },
+    //监听input输入值的变化并获取
+    changeInput(account){
+      console.log(this.account)
+      let value = document.getElementById("myInput").value;
+      console.log('我是value',value)
+    }
+  },
+  computed:{},
+  created(){},
+  mounted(){}
 };
 </script>
 
