@@ -69,4 +69,22 @@ export default [
         meta: { title: '兑换内容' },
         component: () => import('../views/creditsexchange/confirmchange.vue')
     },
+    {
+        path: '/personaldata',
+        name: 'personaldata',
+        meta: { title: '个人资料' },
+        component: () => import('../views/my/personaldata.vue')
+    },
+    {
+        path: '/nickname',
+        name: 'nickname',
+        meta: { title: '昵称' },
+        component: () => import('../views/my/nickname.vue')
+    },
+    {
+        path: '/personalIntroductor',
+        name: 'personalIntroductor',
+        meta: { title: '个人简介' },
+        component: () => import('../views/my/personalIntroductor.vue')
+    },
 ]

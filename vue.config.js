@@ -11,7 +11,8 @@ module.exports = {
                         propList: ['*']
                     })
                 ]
-            }
+            },
+            
         }
     },
     lintOnSave: false,//关闭eslint校验

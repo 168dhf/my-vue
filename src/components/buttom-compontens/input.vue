@@ -10,7 +10,7 @@
     </div>
     <div class="input2_content" v-else>
       <div class="threeinput">
-        <input type="text" :placeholder="config.conf1.contenTitle3" />
+        <input v-model="name" type="text" :placeholder="config.conf1.contenTitle3" />
       </div>
     </div>
   </div>
@@ -20,7 +20,12 @@
 export default {
   name: "inPut",
   components: {},
-  props: ["config"]
+  props: ["config"],
+  data(){
+    return{
+      name:''
+    }
+  },
 };
 </script>
 
