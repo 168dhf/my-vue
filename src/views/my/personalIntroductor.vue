@@ -36,13 +36,13 @@ export default {
       conf: {
         title: '确定',
         handelClick: () => {
-        let name = this.$refs.headerChild.name;
-        this.$router.push({ name: 'personaldata',query:{name}});
-        console.log('我是子组件的数据', this.$refs.headerChild.name);
+          let name = this.$refs.headerChild.name;
+          this.$router.push({ name: 'personaldata', query: { name } });
+          console.log('我是子组件的数据', this.$refs.headerChild.name);
         }
       }
     };
-  },
+  }
 };
 </script>
 
