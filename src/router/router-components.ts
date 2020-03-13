@@ -87,4 +87,10 @@ export default [
         meta: { title: '个人简介' },
         component: () => import('../views/my/personalIntroductor.vue')
     },
+    {
+        path: '/changecourse',
+        name: 'changecourse',
+        meta: { title: '已兑换成功课程' },
+        component: () => import('../views/convertedcourse/changecourse.vue')
+    },
 ]
