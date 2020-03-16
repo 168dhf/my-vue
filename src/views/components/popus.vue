@@ -41,7 +41,7 @@ export default {
   methods: {
       confirm(){
           console.log('你点击了确定',this.codeCourse)
-          if(this.codeCourse != ''){
+          if(this.codeCourse == ''){
               this.show=true;
           }
       },
