@@ -4,12 +4,6 @@ export default [
         redirect: '/login'
     },
     {
-        path: '/index',
-        name: 'index',
-        meta: { title: '' },
-        component: () => import('../views/index.vue')
-    },
-    {
         path: '/login',
         name: 'login',
         meta: { title: '登录' },
@@ -92,5 +86,17 @@ export default [
         name: 'changecourse',
         meta: { title: '已兑换成功课程' },
         component: () => import('../views/convertedcourse/changecourse.vue')
+    },
+    {
+        path: '/tabBar',
+        name: 'tabBar',
+        meta: { title: '首页' },
+        component: () => import('../views/components/tabBar.vue')
+    },
+    {
+        path: '/indexcontent',
+        name: 'indexcontent',
+        meta: { title: '首页' },
+        component: () => import('../views/tabcontent/indexcontent.vue')
     },
 ]
