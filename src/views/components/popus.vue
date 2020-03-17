@@ -2,16 +2,17 @@
   <van-dialog
     v-model="show"
     show-cancel-button
+    :before-close="checkIfInput"
     :confirm-button-text="this.confirmtitle"
     :confirm-button-color="this.confirmcolor"
     :close-on-click-overlay="this.overlay"
-    @confirm="confirm"
     @cancel="cancel"
   >
     <template v-slot:title>
       <div class="currencyTitle">{{classTitle}}</div>
       <div class="inputcontainer">
         <input v-model="codeCourse" type="text" :placeholder="enterCode" />
+        <span class="error-msg" v-show='msgShow'>兑换码不能为空</span>
       </div>
       <div class="addcourse">{{addcourse}}</div>
       <div class="detail">{{detailTitle}}</div>
@@ -21,50 +22,55 @@
 
 <script>
 export default {
-  name: 'popus',
+  name: "popus",
   components: {},
   props: [],
   data() {
     return {
-      confirmtitle: '立即兑换',
-      confirmcolor: '#FFFFFf',
+      msgShow:false,
+      confirmtitle: "立即兑换",
+      confirmcolor: "#FFFFFf",
       show: false,
       overlay: true,
-      classTitle: '课程兑换码',
-      enterCode: '请输入兑换码',
-      addcourse: '+ 添加兑换码',
-      codeCourse: '',
+      classTitle: "课程兑换码",
+      enterCode: "请输入兑换码",
+      addcourse: "+ 添加兑换码",
+      codeCourse: "",
       detailTitle:
-        '支持多个兑换码兑换，每个兑换码一行，添加兑换码点击“添加兑换码”即可；'
+        "支持多个兑换码兑换，每个兑换码一行，添加兑换码点击“添加兑换码”即可；"
     };
   },
   methods: {
-      confirm(){
-          console.log('你点击了确定',this.codeCourse)
-          if(this.codeCourse != ''){
-              this.show=true;
-          }
-      },
-      cancel(){
-          console.log("你点击了取消")
+    checkIfInput(action,done){
+      if (this.codeCourse == "") {
+        this.msgShow=true;
+        // done();
+      }else{
+        //1.关闭dialog
+         done();
+         //2.跳到你想要的页面
       }
-    // beforeClose(action, done) {
-    //     // if(this.codeCourse == ''){
-    //     //      done(false) //不关闭弹框
-    //     // }
-    //     console.log('1023456789')
-    //   if (action === 'confirm') {
-    //     console.log('你点击了确定');
-    //     done(false)
-    //   } else if (action === 'cancel') {
-    //     done(); //关闭
+    },
+    
+    // dialogConfirm(action,done){
+    //   if(this.codeCourse == ''){
+    //     this.msgShow=true;
+    //   }else{
+    //     done()
     //   }
-    // }
+
+    // },
+    cancel() {
+      // done();
+    }
   }
 };
 </script>
 
 <style scoped lang="less">
+.error-msg{
+  color:red;
+}
 .currencyTitle {
   font-size: 17px;
   font-weight: 500;
