@@ -99,4 +99,28 @@ export default [
         meta: { title: '首页' },
         component: () => import('../views/tabcontent/indexcontent.vue')
     },
+    {
+        path: '/checkmore',
+        name: 'checkmore',
+        meta: { title: '查看更按钮' },
+        component: () => import('../components/buttom-compontens/checkmore.vue')
+    },
+    {
+        path: '/recommendvideo',
+        name: 'recommendvideo',
+        meta: { title: '视频推荐' },
+        component: () => import('../views/components/recommendvideo.vue')
+    },
+    {
+        path: '/recommendnotes',
+        name: 'recommendnotes',
+        meta: { title: '视频推荐' },
+        component: () => import('../views/components/recommendnotes.vue')
+    },
+    {
+        path: '/recommendedteacher',
+        name: 'recommendedteacher',
+        meta: { title: '视频推荐' },
+        component: () => import('../views/components/recommendedteacher.vue')
+    },
 ]

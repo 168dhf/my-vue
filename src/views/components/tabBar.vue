@@ -56,13 +56,14 @@ export default {
 .item-tabar {
   ul {
     display: flex;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     justify-content: space-around;
     width: 100%;
     border-top: 1px solid #f5f5f5ff;
     padding-bottom: 10px;
     padding-top: 10px;
+    background: #ffffff;
     li {
       text-align: center;
       img {
