@@ -43,6 +43,7 @@ export default {
   padding-left: 15px;
   padding-right: 15px;
   margin-top: 30px;
+  margin-bottom: 30px;
   .toptitle {
     font-size: 17px;
     font-weight: 500;

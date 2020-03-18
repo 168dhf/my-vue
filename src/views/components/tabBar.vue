@@ -2,9 +2,8 @@
   <div class="item-tabar">
     <ul>
       <li v-for="(item, index) in tabList" :key="index" @click="itemChecklist(item,index)">
-        <img v-if="!imgShow1" :src="item.imguRL1" class="indeximg" alt />
-        <img v-else v-show="imgshow2" :src="item.imguRL2" class="indexelectedimg" alt />
-        <span :class="{noActive,'item-active':isActive}">{{item.intexText}}</span>
+        <img :src="isActive==index?item.imguRL2:item.imguRL1" class="indeximg" alt />
+        <span :class="isActive==index?'item-active':''" class="noActive">{{item.intexText}}</span>
       </li>
     </ul>
   </div>
@@ -14,13 +13,9 @@
 export default {
   name: 'tabbar',
   components: {},
-  props: ['config'],
+  props: ['config','isActive'],
   data() {
     return {
-      imgShow1: false,
-      imgshow2: false,
-      noActive: true,
-      isActive: false,
       tabList: [
         {
           index: 0,
@@ -46,9 +41,16 @@ export default {
   methods: {
     itemChecklist(item, index) {
       console.log('你点击了当前的index', item, index);
-      this.isActive=true;
+      // this.isActive=index;
+      if(index === 0){
+        this.$router.push({name:'indexcontent'})
+      }else if(index === 1){
+        this.$router.push({name:'course'})
+      }else if(index === 2){
+        this.$router.push({name:'myinformation'})
+      }
     }
-  }
+  },
 };
 </script>
 
@@ -62,7 +64,7 @@ export default {
     width: 100%;
     border-top: 1px solid #f5f5f5ff;
     padding-bottom: 10px;
-    padding-top: 10px;
+    // padding-top: 10px;
     background: #ffffff;
     li {
       text-align: center;

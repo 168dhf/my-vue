@@ -123,4 +123,16 @@ export default [
         meta: { title: '视频推荐' },
         component: () => import('../views/components/recommendedteacher.vue')
     },
+    {
+        path: '/myinformation',
+        name: 'myinformation',
+        meta: { title: '我的信息' },
+        component: () => import('../views/my/myinformation.vue')
+    },
+    {
+        path: '/course',
+        name: 'course',
+        meta: { title: '我的信息' },
+        component: () => import('../views/my/course.vue')
+    },
 ]

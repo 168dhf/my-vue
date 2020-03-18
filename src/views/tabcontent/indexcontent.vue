@@ -59,7 +59,7 @@
     <!-- 名师推荐 -->
     <Recommendedteacher></Recommendedteacher>
     <!-- 底部组件 -->
-    <Tabbar></Tabbar>
+    <Tabbar isActive='0'></Tabbar>
   </div>
 </template>
 
