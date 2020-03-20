@@ -14,6 +14,16 @@ initVantComponent();
 Vue.config.productionTip = false
 // Vue.use(Vant);
 
+
+/**
+ * 重写路由的push方法--->这个是vue-cli4.x以上的坑，不然的话，你是跳转不了的
+ */
+import Router from 'vue-router'
+const originalPush = Router.prototype.push
+Router.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch(err => err)
+}
+
 new Vue({
   router,
   store,
