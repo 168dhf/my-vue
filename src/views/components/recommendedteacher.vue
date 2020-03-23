@@ -4,7 +4,10 @@
     <!-- 查看更多按钮 -->
     <!-- 名师列表 -->
     <Teacher></Teacher>
-    <Check></Check>
+    <!-- 底部按钮 -->
+    <div class="check">
+      <Check></Check>
+    </div>
   </div>
 </template>
 
@@ -31,6 +34,9 @@ export default {
     color: rgba(51, 51, 51, 1);
     line-height: 24px;
     padding-left: 15px;
+  }
+  .check{
+    margin-bottom: 30px;
   }
 }
 </style>

@@ -1,7 +1,9 @@
 <template>
   <div class="container">
     <!-- 头部组件 -->
-    <Head :config="wrapConfig"></Head>
+    <div class="header-content" :style="{backgroundColor:backgroundColor}">
+      <Head :config="wrapConfig"></Head>
+    </div>
     <!-- 中间内容 -->
     <div class="allcontent">
       <div class="boxcontent">
@@ -59,7 +61,7 @@
     <!-- 名师推荐 -->
     <Recommendedteacher></Recommendedteacher>
     <!-- 底部组件 -->
-    <Tabbar isActive='0'></Tabbar>
+    <Tabbar isActive="0"></Tabbar>
   </div>
 </template>
 
@@ -81,6 +83,7 @@ export default {
   props: [],
   data() {
     return {
+      backgroundColor: "",
       searchimgurl: require("@/assets/images/search.png"),
       imgurl1: require("@/assets/images/banner.png"),
       imgurl2: require("@/assets/images/video.png"),
@@ -99,9 +102,7 @@ export default {
         }
       },
       imgurlList: [
-        { imgurl1: require("@/assets/images/invited.png"), 
-          intexText: "邀请" 
-        },
+        { imgurl1: require("@/assets/images/invited.png"), intexText: "邀请" },
         {
           imgurl1: require("@/assets/images/project.png"),
           intexText: "积分排行"
@@ -116,15 +117,43 @@ export default {
         }
       ]
     };
+  },
+
+  created() {
+    //首先，在mounted钩子window添加一个滚动滚动监听事件,这个事件写在mouthed钩子函数里面好像执行不了
+    window.addEventListener("scroll", this.handleScroll);
+    this.handleScroll();
+    //  console.log('我是this.handleScroll()',this.handleScroll())
+  },
+  methods: {
+    //然后在方法中，添加这个handleScroll方法来获取滚动的位置
+    handleScroll() {
+      let scrollTop=window.pageYOffset||document.documentElement.scrollTop||document.body.scrollTop;
+      console.log("woshi顶部距离啊啊啊啊啊", scrollTop);
+      if (scrollTop > 20) {
+        console.log("你大于20啦", scrollTop);
+        this.backgroundColor = "#2da1db";
+      } else {
+        this.backgroundColor = "";
+      }
+    }
   }
 };
 </script>
 
 <style scoped lang="less">
 .container {
+  .header-content {
+    position: fixed;
+    top: 0;
+    background: #ffffff;
+    width: 100%;
+    z-index: 999;
+  }
   .allcontent {
     padding-left: 15px;
     padding-right: 15px;
+    padding-top: 70px;
     .boxcontent {
       position: relative;
       width: 100%;
