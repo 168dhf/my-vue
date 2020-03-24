@@ -31,7 +31,7 @@
     <!-- 分类 -->
     <div class="listcontent">
       <ul>
-        <li v-for="(item, index) in imgurlList" :key="index">
+        <li v-for="(item, index) in imgurlList" :key="index" @click="changeClick(index)">
           <img :src="item.imgurl1" alt />
           <span>{{item.intexText}}</span>
         </li>
@@ -98,20 +98,26 @@ export default {
           backFn: () => {
             this.$router.go(-1);
           },
-          title: "首页"
+          title: "首页",
         }
       },
       imgurlList: [
-        { imgurl1: require("@/assets/images/invited.png"), intexText: "邀请" },
+        { 
+          index: 0,
+          imgurl1: require("@/assets/images/invited.png"), 
+          intexText: "邀请" },
         {
+          index: 1,
           imgurl1: require("@/assets/images/project.png"),
           intexText: "积分排行"
         },
         {
+          index: 2,
           imgurl1: require("@/assets/images/charge.png"),
           intexText: "积分任务"
         },
         {
+          index: 3,
           imgurl1: require("@/assets/images/teachername.png"),
           intexText: "俱乐部"
         }
@@ -135,6 +141,18 @@ export default {
         this.backgroundColor = "#2da1db";
       } else {
         this.backgroundColor = "";
+      }
+    },
+    changeClick(index){
+      if(index==0){
+        //邀请
+      }else if(index==1){
+        //积分排行
+      }else if(index==2){
+        //积分任务
+        this.$router.push({name:'task'});
+      }else if(index==3){
+        //俱乐部
       }
     }
   }

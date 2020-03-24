@@ -86,7 +86,7 @@ export default {
                 // on cancel
               });
           } else {
-            this.$router.push({ name: 'settauthentication' });
+            this.$router.push({ name: 'indexcontent' });
           }
         }
       }

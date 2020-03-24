@@ -1,7 +1,7 @@
 export default [
     {
         path: '/',
-        redirect: '/indexcontent'
+        redirect: '/login'
     },
     {
         path: '/login',
@@ -134,5 +134,11 @@ export default [
         name: 'course',
         meta: { title: '我的信息' },
         component: () => import('../views/my/course.vue')
+    },
+    {
+        path: '/task',
+        name: 'task',
+        meta: { title: '我的信息' },
+        component: () => import('../views/tasklist/task.vue')
     },
 ]
